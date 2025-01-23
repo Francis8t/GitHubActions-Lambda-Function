@@ -26,6 +26,6 @@ jobs:
             --function-name HelloWorldLambda \
             --payload '{}' \
             output.json
-          cat output.json
+          cat output.json
+          
 
-         
