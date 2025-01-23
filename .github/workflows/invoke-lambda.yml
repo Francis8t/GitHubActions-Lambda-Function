@@ -1,4 +1,4 @@
-#Start of Workflow Script
+#Start of Workflow Script Updated
 name: Trigger AWS Lambda via OIDC
 
 on:
