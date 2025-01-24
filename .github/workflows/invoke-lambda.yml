@@ -21,13 +21,13 @@ jobs:
       - name: Configure AWS Credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::162042740788:role/LambdaRoleFK
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Invoke Lambda Function
         run: |
           aws lambda invoke \
-            --function-name HelloWorldLambda \
+            --function-name ${{ secrets.LAMBDA_FUNCTION_NAME }}  \
             --payload '{}' \
             output.json
           cat output.json
